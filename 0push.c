@@ -20,3 +20,27 @@ void push(stack_t **stack, unsigned int line_number)
     }
     *stack = new;
 }
+void pall(stack_t **stack, unsigned int line_number)
+{
+    stack_t *tmp = stack;
+
+    /* line number what for? */
+
+    if (*stack == NULL)
+        return;
+    while (tmp != NULL)
+    {
+        printf("%d\n", tmp->n);
+        tmp = tmp->next;
+    }
+}
+
+void pint(stack_t **stack, unsigned int line_number)
+{
+    if (stack == NULL)
+    {
+        fprintf(stderr, "L%d: can't pint, stack empty", line_number);
+        exit(EXIT_FAILURE);
+    }
+    printf("%d\n", *stack->n);
+}
