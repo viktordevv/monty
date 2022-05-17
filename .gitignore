@@ -1,0 +1,4 @@
+*.log
+*.json
+.vscode
+.DS_Store
