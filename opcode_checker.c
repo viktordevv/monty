@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 void checker(stack_t **stack, unsigned int line_number);
 {
@@ -23,36 +23,6 @@ void checker(stack_t **stack, unsigned int line_number);
         }
         i++;
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-int (*convers(const char *fmt))(va_list)
-{
-	instructions_t check[] = {
-		{"push", push},
-		{"pall", pall}
-		{NULL, NULL}
-	};
-
-	int i;
-
-	for (i = 0 ; check[i].s; i++)
-	{
-		if (*fmt == *(check[i].s))
-			break;
-	}
-	return (check[i].f);
+    fprintf(stderr, "L%d: unknown instruction %s", line_number, token);
+    exit(EXIT_FAILURE);
 }

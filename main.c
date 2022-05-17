@@ -14,8 +14,8 @@ int main(int argc, char **argv)
     }
     char *line = NULL;
     size_t len = 0;
-    ssize_t read;
-    stack_t *head = NULL;
+    ssize_t read = 0;
+    stack_t *stack = NULL;
     int line_number = 1;  /* ! fix line number */
     while ((read = getline(&line, &len, fp)) != -1)
     {
@@ -32,14 +32,15 @@ int main(int argc, char **argv)
                 fprintf(stderr, "L%d: usage: push integer\n", line_number);
                 exit(EXIT_FAILURE);
             }
-            push(&head, line_number);
+            push(&stack, line_number);
         }
         else
         {
-            checker(head, line_number);
+            checker(&stack, line_number);
         }
         line_number++;
     }
+    free_stack(stack);
     free(line);
     fclose(fp);
     return (0);
