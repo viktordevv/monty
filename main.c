@@ -1,5 +1,5 @@
 #include "monty.h"
-char *token;
+char *token = NULL;
 /**
  * main - entry point
  * @argc: number of arguments
