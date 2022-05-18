@@ -83,9 +83,34 @@ void _div(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: division by zero", line_number);
 		exit(EXIT_FAILURE);
 	}
-	else{
+	else
+	{
 		m = tmp->next->n / tmp->n;
 		tmp->next->n = m;
 	}
+	pop(stack, line_number);
+}
+
+/**
+ * mul - Multiply two numbers
+ * @stack : pointer
+ * @line_number : line number
+ * Return: void
+ */
+void mul(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = NULL;
+	int m;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	tmp = *stack;
+	m = tmp->next->n * tmp->n;
+	tmp->next->n = m;
+
 	pop(stack, line_number);
 }
