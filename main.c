@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 		else
 		{
 			checker(&stack, line_number); 
-		}rm _MONTY_H_
+		}
 		line_number++; }
 	free_stack(stack);
 	free(line);
