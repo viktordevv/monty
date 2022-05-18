@@ -4,4 +4,4 @@ HFILE = monty.h
 CFLAGS = -Wall -Werror -Wextra -pedantic -std=gnu89
 
 $(TARGET) : $(OBJECTS)
-	gcc $@ $(OBJECTS) $(CFLAGS) -o $(TARGET)
+	gcc $(OBJECTS) $(CFLAGS) -o $(TARGET)
