@@ -16,7 +16,7 @@ void push(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: can't malloc\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	new->n = token;
+	new->n = atoi(token);
 	new->next = *stack;
 	new->prev = NULL;
 	if (*stack != NULL)
