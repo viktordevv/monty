@@ -1,9 +1,8 @@
 #include "monty.h"
 
+
 void push(stack_t **stack, unsigned int line_number)
 {
-
-    char *value = strtok(token, " \t");
 
     stack_t *new = malloc(sizeof(stack_t));
     if (new == NULL)
@@ -11,7 +10,7 @@ void push(stack_t **stack, unsigned int line_number)
         fprintf(stderr, "L%d: can't malloc\n", line_number);
         exit(EXIT_FAILURE);
     }
-    new->n = atoi(value);
+    new->n = atoi(token);
     new->next = *stack;
     new->prev = NULL;
     if (*stack != NULL)
@@ -64,8 +63,14 @@ void pop(stack_t **stack, unsigned int line_number)
 
 }
 
-/* Aqui cabe otra funcion - swaps */
 void swap(stack_t **stack, unsigned int line_number)
 {
-
+    if (*stack == NULL || (*stack)->next == NULL)
+    {
+        fprintf(stderr, "L%d: error swap" , line_number);
+        exit(EXIT_FAILURE);
+    }
+    stack_t *tmp = *stack;
+    *stack = (*stack)->next;
+    (*stack)->prev = tmp;
 }
