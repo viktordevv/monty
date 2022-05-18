@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 			push(&stack, line_number); }
 		else
 		{
-			checker(&stack, line_number); 
+			checker(&stack, line_number);
 		}
 		line_number++; }
 	free_stack(stack);
