@@ -14,7 +14,7 @@ int isNumber(char *s)
 
 	for (i = 0; s[i] != '\n' && s[i]; i++)
 	{
-		if (isdigit(s[i]) == 0)
+		if ((isdigit(s[i]) == 0) && s[i] != '-')
 			return (0);
 	}
 	return (1);
