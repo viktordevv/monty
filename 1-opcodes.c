@@ -8,7 +8,7 @@
  */
 void add(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp;
+	stack_t *tmp = NULL;
 	int m;
 
 	if (*stack == NULL || (*stack)->next == NULL)
@@ -44,7 +44,7 @@ void nop(stack_t **stack, unsigned int line_number)
  */
 void sub(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp;
+	stack_t *tmp = NULL;
 	int m;
 
 	if (*stack == NULL || (*stack)->next == NULL)
@@ -57,5 +57,35 @@ void sub(stack_t **stack, unsigned int line_number)
 	m = tmp->next->n - tmp->n;
 	tmp->next->n = m;
 
+	pop(stack, line_number);
+}
+
+/**
+ * _div - Divide two numbers
+ * @stack : pointer
+ * @line_number : line number
+ * Return: void
+ */
+void _div(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = NULL;
+	int m;
+
+	tmp = *stack;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if (tmp->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero", line_number);
+		exit(EXIT_FAILURE);
+	}
+	else{
+		m = tmp->next->n / tmp->n;
+		tmp->next->n = m;
+	}
 	pop(stack, line_number);
 }
