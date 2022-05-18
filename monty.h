@@ -53,5 +53,6 @@ void mul(stack_t **stack, unsigned int line_number);
 
 void checker(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
+int isNumber(char *s);
 
 #endif /* _MONTY_H_ */
