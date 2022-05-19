@@ -66,7 +66,7 @@ The opcode `pop` removes the top element of the stack.
 
 ```
 $ amonkeyprogrammer@ubuntu:~/monty$ cat -e bytecodes/pop.m
-push 1
+push 1$
 push 2
 push 3
 pall$
