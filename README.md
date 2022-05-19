@@ -10,7 +10,7 @@ To compile this project, you can use the following command:
 $ make
 ```
 
-# Option Codes
+# Option Codes.
 
 ## Push opcode
 
