@@ -16,7 +16,7 @@ void checker(stack_t **stack, unsigned int line_number)
 		{"swap", swap},
 		{"add", add},
 		{"sub", sub},
-		{"_div", _div},
+		{"div", _div},
 		{"mul", mul},
 		{"mod", mod},
 		{"nop", nop},
