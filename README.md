@@ -115,7 +115,7 @@ $ amonkeyprogrammer@ubuntu:~/monty$
 The opcode `add` adds the top two elements of the stack. The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
 
 * The top element of the stack contains the result
-* The stack is one element shorter
+* The stack is one element shorter.
 
 **Usage:** `add`. If the stack contains less than two elements, `add` print an error message.
 
