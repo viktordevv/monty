@@ -68,7 +68,6 @@ void sub(stack_t **stack, unsigned int line_number)
  */
 void _div(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp = NULL;
 	int m;
 
 	if (*stack == NULL || (*stack)->next == NULL)
@@ -76,16 +75,14 @@ void _div(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	tmp = *stack;
-	if (tmp->n == 0)
+	m = (*stack)->n;
+	if (m == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	m = tmp->next->n / tmp->n;
-	tmp->next->n = m;
-
 	pop(stack, line_number);
+	(*stack)->n /= m;
 }
 
 /**
